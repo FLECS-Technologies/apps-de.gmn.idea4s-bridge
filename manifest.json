@@ -22,9 +22,6 @@
         "logs:/app/logs",
         "fleetManagementData:/app/fleetManagementData"
     ],
-    "conffiles": [
-        "settings_main.json:/app/data/settings/settings_main.json:rw"
-    ],
     "env": [],
     "capabilities": [
         "NET_RAW"
