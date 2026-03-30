@@ -1,43 +1,32 @@
 {
     "$schema": "https://raw.githubusercontent.com/FLECS-Technologies/app-sdk/3.0.0/manifest.schema.json",
     "_schemaVersion": "3.0.0",
-    "app": "",
+    "app": "de.gmn.idea4s-bridge",
     "version": "##VERSION##",
     "revision": "0",
-    "image": "flecs.azurecr.io/",
+    "image": "flecs.azurecr.io/de.gmn.idea4s-bridge",
     "multiInstance": false,
     "editors": [
         {
-            "name": "My UI",
-            "port": 6789,
-            "supportsReverseProxy": true
+            "name": "IDEA4S-Bridge UI",
+            "port": 8080,
+            "supportsReverseProxy": false
         }
     ],
-    "args": [
-        "--launch-arg-1",
-        "--launch-arg-2=8000"
-    ],
-    "capabilities": [],
-    "conffiles": [
-        "default.conf:/etc/my-app/default.conf",
-        "default.conf:/etc/my-app/default.conf:ro",
-        "default.conf:/etc/my-app/default.conf:rw"
-    ],
-    "devices": [
-        "/dev/net/tun"
-    ],
-    "env": [
-        "MY_ENV=value"
-    ],
     "ports": [
-        "12345:12345"
+        "8050:8050",
+        "8080:8080"
     ],
     "volumes": [
-        "my-app-etc:/etc/my-app",
-        "/var/lib/my-app:/var/lib/my-app"
+        "config:/app/config",
+        "logs:/app/logs",
+        "fleetManagementData:/app/fleetManagementData"
     ],
-    "labels": [
-        "org.my.label",
-        "org.my.label-with-value=Some custom label value"
+    "conffiles": [
+        "settings_main.json:/app/data/settings/settings_main.json:rw"
+    ],
+    "env": [],
+    "capabilities": [
+        "NET_RAW"
     ]
 }
