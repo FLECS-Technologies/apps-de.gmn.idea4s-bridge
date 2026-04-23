@@ -2,14 +2,14 @@
     "$schema": "https://raw.githubusercontent.com/FLECS-Technologies/app-sdk/3.0.0/manifest.schema.json",
     "_schemaVersion": "3.0.0",
     "app": "de.gmn.idea4s-bridge",
-    "version": "##VERSION##",
+    "version": "1.2.13",
     "revision": "0",
     "image": "flecs.azurecr.io/de.gmn.idea4s-bridge",
     "multiInstance": false,
     "editors": [
         {
-            "name": "IDEA4S-Bridge UI",
-            "port": 8080,
+            "name": "IDEA4s-Bridge Dashboard",
+            "port": 8050,
             "supportsReverseProxy": false
         }
     ],
